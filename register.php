@@ -18,9 +18,9 @@ $emailExist = [];
 var_dump($_SESSION);
 
 if (!empty($_POST["submit"])) {
-    $name = $_POST["name"];
-    $surname = $_POST["surname"];
-    $email = $_POST["email"];
+    $name = array_push($_POST["name"]);
+    $surname = array_push($_POST["surname"]);
+    $email = array_push($_POST["email"]);
 
     $_SESSION["name"] = $name;
     $_SESSION["surname"] = $surname;
@@ -31,21 +31,13 @@ if (!empty($_POST["submit"])) {
     } 
 } 
 
-if (empty($name) || empty($surname || empty($email) || empty($password))) {
-    // echo "You are not logged in!";
-    header("Location: register.php");
-} else {
-    //echo "Your name is: $name<br>";
-    //echo "Your surname is: $surname<br>";
-}
+
 
 if ($_SESSION["email"] == $_POST["email"]) {
     $emailExist="Email already registered.";
 } 
 
-//if (){
 
-//}
 
 echo "</pre>";
 

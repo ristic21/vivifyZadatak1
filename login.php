@@ -7,6 +7,10 @@ $password = "";
 if ($_POST["email"] == $_SESSION["email"] && $_POST["password"] == $_SESSION["password"] ) {
     header("Location: home.php");
 }
+if (empty($name) || empty($surname || empty($email) || empty($password))) {
+    // echo "You are not logged in!";
+    header("Location: login.php");
+} 
 // TODO: Ovde pisati svu logiku oko logovanja korisnika, validacije i sve sto je potrebno da bi resili ovaj deo zadatka
 ?>
 <html>
